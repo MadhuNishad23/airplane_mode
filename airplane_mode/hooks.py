@@ -145,6 +145,12 @@ app_license = "mit"
 # 	}
 # }
 
+doc_events ={
+    "Shop": {
+        "on_update": "airplane_mode.api.update_shop_counts"
+    }
+}
+
 # Scheduled Tasks
 # ---------------
 

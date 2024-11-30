@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{airport}",
+ "creation": "2024-11-28 21:43:26.578673",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "airport",
+  "total_shops",
+  "available_shops",
+  "occupied_shops"
+ ],
+ "fields": [
+  {
+   "fieldname": "airport",
+   "fieldtype": "Data",
+   "label": "Airport"
+  },
+  {
+   "fieldname": "total_shops",
+   "fieldtype": "Data",
+   "label": "Total Shops",
+   "read_only": 1
+  },
+  {
+   "fieldname": "available_shops",
+   "fieldtype": "Data",
+   "label": "Available Shops",
+   "read_only": 1
+  },
+  {
+   "fieldname": "occupied_shops",
+   "fieldtype": "Data",
+   "label": "Occupied Shops",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-29 12:02:06.123517",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Airports",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

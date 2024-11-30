@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Shops</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        h1 {
+            color: #00695c;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px #004d40;
+        }
+
+        /* Shop listing styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        li {
+            background: linear-gradient(145deg, #ffffff, #e0f2f1);
+            border: 1px solid #b2dfdb;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            color: #00796b;
+            font-size: 1.8em;
+            margin: 0 0 10px 0;
+            text-shadow: 1px 1px 2px #004d40;
+        }
+
+        p {
+            color: #455a64;
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        /* Message when no shops are available */
+        .no-shops-message {
+            text-align: center;
+            color: #ff7043;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        /* Button styles */
+        .action-button {
+            display: inline-block;
+            background-color: #00796b;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Shops for Lease</h1>
+    
+    {% if available_shops %}
+        <ul>
+            {% for shop in available_shops %}
+                <li>
+                    <h3>{{ shop.shop_name }}</h3>
+                    <p><strong>Tenant:</strong> {{ shop.tenant }}</p>
+                    <p><strong>Area:</strong> {{ shop.area }} sq ft</p>
+                    <p><strong>Rent Amount:</strong> ₹{{ shop.rent_amount }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-shops-message">No shops available for lease at the moment.</p>
+    {% endif %}
+</body>
+</html>
